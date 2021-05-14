@@ -4,15 +4,15 @@
 
 $a=[];
 $i=0;
-$n=0;
+$solonnhat=0;
 $solonnhi=0;
 $a=array(0,1,34,24,23,13);
-for($i=0;$i<count($a)-1;$i++){
+for($i=0;$i<count($a)-2;$i++){
     if($a[$i] < $a[$i+1]){
-        $solonnhi=$a[$i];
-        if(($solonnhi < $a[$i])) $solonnhi=$a[$i];
-        $n =$a[$i+1];
+        $pos=$i;
+        $solonnhat=$a[i+1];
+        if(($solonnhi < $solonnhat) && ($solonnhi < $a[$i-1<0 ? $i+1 : $i-1])) $solonnhi=$a[$i-1<0 ? $i+1 : $i-1];
     }
 }
-echo "so lon nhat: ". $n;
+echo "so lon nhat: ". $solonnhat;
 echo "so lon nhi:". $solonnhi;
