@@ -7,7 +7,7 @@ $i=0;
 $n=0;
 $solonnhi=0;
 $a=array(0,1,34,24,23,13);
-for($i=0;$i<count($a);$i++){
+for($i=0;$i<count($a)-1;$i++){
     if($a[$i] < $a[$i+1]){
         if(($solonnhi < $a[$i]) && ($solonnhi < $a[$i+1])) $solonnhi=$a[$i];
         $n =$a[$i+1];
