@@ -7,7 +7,7 @@ $i=0;
 $n=0;
 $solonnhi=0;
 
-for(i=0;i<10;i++){
+for($i=0;$i<10;$i++){
     if($a[i] < $a[i+1]){
         if(($solonnhi < $a[i]) && ($solonnhi < $a[i+1])) $solonnhi=$a[i];
         $n =$a[i+1];
