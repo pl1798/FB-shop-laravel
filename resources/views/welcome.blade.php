@@ -2,7 +2,7 @@
 
 // Tim so lon nhat, lon nhi trong mang so nguyen, khong sap xep, 1 vong lap
 
-int $a[10];
+int $a[];
 int $i, $n, $solonnhi;
 
 for(i=0;i<10;i++){
