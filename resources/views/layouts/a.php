@@ -1,5 +1,3 @@
-<?php
-
 // Tim so lon nhat, lon nhi trong mang so nguyen, khong sap xep, 1 vong lap
 
 int $a[10];
