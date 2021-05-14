@@ -9,8 +9,7 @@ $solonnhi=0;
 $a=array(0,1,34,24,23,13);
 for($i=0;$i<count($a)-2;$i++){
     if($a[$i] < $a[$i+1]){
-        $pos=$i;
-        $solonnhat=$a[i+1];
+        $solonnhat=$a[$i+1];
         if(($solonnhi < $solonnhat) && ($solonnhi < $a[$i-1<0 ? $i+1 : $i-1])) $solonnhi=$a[$i-1<0 ? $i+1 : $i-1];
     }
 }
