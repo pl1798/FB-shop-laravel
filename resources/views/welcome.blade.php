@@ -13,10 +13,10 @@ if($a[0]>$a[1]){
     $solonnhi=$a[0];
 }
 for($i=2;$i<count($a);$i++){
-    if($solonnhat < $a[$i]){
+    if($solonnhat <= $a[$i]){
         $solonnhat=$a[$i];
+        $solonnhi=$solonnhat;
     }
-    if($solonnhi<$a[$i] && $solonnhi<$solonnhat) continue;
     if($solonnhi<$a[$i]){
         $solonnhi=$a[$i];
     }
