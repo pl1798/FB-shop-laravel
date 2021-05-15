@@ -1,7 +1,7 @@
 <?php
 
 // Tim so lon nhat, lon nhi trong mang so nguyen, khong sap xep, 1 vong lap
-$a=array(0,1,34,24,23,13);
+$a=array(1,1,34,24,23,13);
 if($a[0]>$a[1]){
     $solonnhat=$a[0];
     $solonnhi=$a[1];
