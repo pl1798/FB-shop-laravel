@@ -16,9 +16,8 @@ for($i=2;$i<count($a);$i++){
     if($solonnhat <= $a[$i]){
         $solonnhat=$a[$i];
         $solonnhi=$solonnhat;
-        continue;
     }
-    elseif($solonnhi<$a[$i]){
+    elseif($solonnhi<$a[$i] && $a[$i]!=$solonnhat){
         $solonnhi=$a[$i];
     }
 }
