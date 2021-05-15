@@ -21,5 +21,5 @@ for($i=2;$i<count($a);$i++){
         $solonnhi=$a[$i];
     }
 }
-echo "so lon nhat:sfsdfdfsdf ". $solonnhat;
-echo "so lon nhi:xcvdxfdsfdsfvsd ". $solonnhi;
+echo "so lon nhat:sfsdsadasfdfsdf ". $solonnhat;
+echo "so lon nhi:xcvdxfdsfdsfvzxczxczxczxcsd ". $solonnhi;
