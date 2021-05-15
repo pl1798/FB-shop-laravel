@@ -17,9 +17,7 @@ for($i=2;$i<count($a);$i++){
         $solonnhat=$a[$i];
         $solonnhi=$solonnhat;
     }
-    if($solonnhi<$a[$i]){
-        $solonnhi=$a[$i];
-    }
+    
 }
 echo "so lon nhat: ". $solonnhat;
 echo "so lon nhi:". $solonnhi;
