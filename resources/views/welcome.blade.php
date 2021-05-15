@@ -1,17 +1,23 @@
 <?php
 
 // Tim so lon nhat, lon nhi trong mang so nguyen, khong sap xep, 1 vong lap
-
-$a=[];
-$i=0;
-$solonnhat=0;
-$solonnhi=0;
 $a=array(0,1,34,24,23,13);
-for($i=0;$i<count($a)-2;$i++){
-    if($a[$i] < $a[$i+1]){
-        $solonnhat=$a[$i+1];
-        $solonnhi=$a[$i];
-        if(($solonnhi < $solonnhat) && ($solonnhi < $a[$i-1<0 ? $i : $i-1])) $solonnhi=$a[$i-1<0 ? $i : $i-1];
+if($a[0]>$a[1]){
+    $solonnhat=$a[0];
+    $solonnhi=$a[1];
+}elseif($a[0]=$a[1]){
+    $solonnhat=$a[1];
+    $solonnhi=0;
+}else{
+    $solonnhat=$a[1];
+    $solonnhi=$a[0];
+}
+for($i=2;$i<count($a);$i++){
+    if($solonnhat < $a[$i]){
+        $solonnhat=$a[$i];
+    }
+    if($solonnhi<$a[i] && $solonnhi<$solonnhat){
+        $solonnhi=$a[i];
     }
 }
 echo "so lon nhat: ". $solonnhat;
