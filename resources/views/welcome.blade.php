@@ -22,4 +22,4 @@ for($i=2;$i<count($a);$i++){
     }
 }
 echo "so lon nhat: dsfdsfsdf". $solonnhat;
-echo "so lon nhi:". $solonnhi;
+echo "so lon nhi: sdsdasdasdsfsdfsad". $solonnhi;
