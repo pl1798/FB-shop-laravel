@@ -14,10 +14,10 @@ if($a[0]>$a[1]){
 }
 for($i=2;$i<count($a);$i++){
     if($solonnhat <= $a[$i]){
-        $solonnhat=$a[$i];
         $solonnhi=$solonnhat;
+        $solonnhat=$a[$i];
     }
-    elseif($solonnhi<$a[$i] && $a[$i]!=$solonnhat){
+    elseif($solonnhi<$a[$i]){
         $solonnhi=$a[$i];
     }
 }
