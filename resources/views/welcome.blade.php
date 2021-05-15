@@ -18,7 +18,7 @@ for($i=2;$i<count($a);$i++){
     }
     if($solonnhi<$a[$i] && $solonnhi==$solonnhat){
         continue;
-    }else{
+    }elseif($solonnhi<$a[$i]){
         $solonnhi=$a[$i];
     }
 }
