@@ -1671,7 +1671,7 @@
         <!-- overlayScrollbars -->
         <script src={{secure_asset("/js/jquery.overlayScrollbars.min.js")}}></script>
         <!-- AdminLTE App -->
-        <script src={{secure_asset("/js/adminlte.js")}}></script>
+        <script src={{secure_asset("/js/adminlte.min.js")}}></script>
         <!-- ChartJS -->
         <script src={{secure_asset("/js/Chart.min.js")}}></script>
     </body>
