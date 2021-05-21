@@ -1665,14 +1665,14 @@
         <!-- ./wrapper -->
         <!-- REQUIRED SCRIPTS -->
         <!-- jQuery -->
-        <script src={{secure_asset("theme_admin/js/jquery.min.js")}}></script>
+        <script src={{secure_asset("/theme_admin/js/jquery.min.js")}}></script>
         <!-- Bootstrap -->
-        <script src={{secure_asset("theme_admin/js/bootstrap.bundle.min.js")}}></script>
+        <script src={{secure_asset("/theme_admin/js/bootstrap.bundle.min.js")}}></script>
         <!-- overlayScrollbars -->
-        <script src={{secure_asset("theme_admin/js/jquery.overlayScrollbars.min.js")}}></script>
+        <script src={{secure_asset("/theme_admin/js/jquery.overlayScrollbars.min.js")}}></script>
         <!-- AdminLTE App -->
-        <script src={{secure_asset("theme_admin/js/adminlte.js")}}></script>
+        <script src={{secure_asset("/theme_admin/js/adminlte.js")}}></script>
         <!-- ChartJS -->
-        <script src={{secure_asset("theme_admin/js/Chart.min.js")}}></script>
+        <script src={{secure_asset("/theme_admin/js/Chart.min.js")}}></script>
     </body>
 </html>
