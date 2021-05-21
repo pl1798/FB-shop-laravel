@@ -7,11 +7,11 @@
         <!-- Google Font: Source Sans Pro -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
         <!-- Font Awesome Icons -->
-        <link rel="stylesheet" href={{secure_asset("/css/fontawesome-free/css/all.min.css")}}>
+        <link rel="stylesheet" href={{secure_asset("theme_admin/css/fontawesome-free/css/all.min.css")}}>
         <!-- overlayScrollbars -->
-        <link rel="stylesheet" href={{secure_asset("css/overlayScrollbars/css/OverlayScrollbars.min.css")}}>
+        <link rel="stylesheet" href={{secure_asset("theme_admin/css/overlayScrollbars/css/OverlayScrollbars.min.css")}}>
         <!-- Theme style -->
-        <link rel="stylesheet" href={{secure_asset("/css/adminlte.min.css")}} >
+        <link rel="stylesheet" href={{secure_asset("theme_admin/css/adminlte.min.css")}} >
     </head>
     <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
         <div class="wrapper">
@@ -1665,14 +1665,14 @@
         <!-- ./wrapper -->
         <!-- REQUIRED SCRIPTS -->
         <!-- jQuery -->
-        <script src={{secure_asset("/js/jquery.min.js")}}></script>
+        <script src={{secure_asset("theme_admin/js/jquery.min.js")}}></script>
         <!-- Bootstrap -->
-        <script src={{secure_asset("/js/bootstrap.bundle.min.js")}}></script>
+        <script src={{secure_asset("theme_admin/js/bootstrap.bundle.min.js")}}></script>
         <!-- overlayScrollbars -->
-        <script src={{secure_asset("/js/jquery.overlayScrollbars.min.js")}}></script>
+        <script src={{secure_asset("theme_admin/js/jquery.overlayScrollbars.min.js")}}></script>
         <!-- AdminLTE App -->
-        <script src={{secure_asset("/js/adminlte.js")}}></script>
+        <script src={{secure_asset("theme_admin/js/adminlte.js")}}></script>
         <!-- ChartJS -->
-        <script src={{secure_asset("/js/Chart.min.js")}}></script>
+        <script src={{secure_asset("theme_admin/js/Chart.min.js")}}></script>
     </body>
 </html>
