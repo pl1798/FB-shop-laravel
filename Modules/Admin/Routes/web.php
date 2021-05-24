@@ -16,6 +16,7 @@ Route::prefix('admin')->group(function() {
     Route::group(['prefix' => 'category'], function(){
         Route::get('/{tab?}','AdminCategoryController@index')->name('admin.get.list.category');
         Route::get('/create','AdminCategoryController@create')->name('admin.get.create.category');
+        Route::post('/create','AdminCategoryController@create')->name('admin.post.store.category');
     });
     Route::group(['prefix' => 'product'], function(){
         Route::get('/{tab?}','AdminCategoryController@index')->name('admin.get.list.product');
