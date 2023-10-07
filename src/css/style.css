@@ -22,3 +22,11 @@ html {
     word-break: normal;
     color: #888;
 } */
+
+.dot{
+  width:35px;
+  height:35px;
+  position:absolute;
+  background: url("../asset/img/leaf.png");
+  background-size: 100% 100%;
+}
