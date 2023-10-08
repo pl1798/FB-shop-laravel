@@ -85,38 +85,59 @@
 // 	}
 // }
 
+var Leaf = [];
+var settings = {
+	leafCount: 0,
+	renewCheck: 10
+};
+var tickCount = 0;
 fetch('./src/asset/svg/autumn_trees.svg').then(data => data.text()).then((svg) => {
 	$('#autumns_tree').html(svg);
-	let total = 40;
-	for (i=0; i<total; i++){ 
-		var Div = document.createElement('div');
-		TweenLite.set(Div,{attr:{class:'dot'},y:R(-200,-150),z:R(-200,200)});
-		$('foreignObject').append(Div);
-		makeLeaf(Div);
-	}
+	makeLeaf();
 })
-function makeLeaf(elm) {
+function makeLeaf() {
+	let leftPath = $('#leaf #path10788').offset().left;
+	let rightPath = $('#leaf #path11106').offset().left;
+	let x = leftPath + (Math.random() * (rightPath - leftPath));
+	console.log(leftPath, rightPath, x);
+	let y = $('#leaf #path7918').offset().top;
 	let endY = $('#land').offset().top + (Math.random() * $('#land').height());
-	let scale = 0.5 + (Math.random() * 0.5);
-	let leftPath = $('#leaf #path1276').offset().left;
-	let rightPath = $('#leaf #path8026').offset().left;
-	let x = leftPath + Math.random() * (rightPath - leftPath);
-	let y = $('#leaf #path8026').offset().top;
 	
-	if (scale > 0.8) {
-		x =  x + $('#autumns_tree svg').offset().left;
-		y = $('#autumns_tree svg').offset().top + Math.random()*$('#autumns_tree svg').height();
-	} else {
+	let Div = $('<div></div>');
 
-	}
+	TweenLite.set(Div,{attr: {class: "dot"}, rotationZ:R(40,360), x: x, y: y});
+	Leaf.push(Div);
 
-	TweenMax.fromTo(elm,3 + (Math.random() * 5), {x: x, y: y}, {y: endY, ease:Linear.easeNone,repeat:-1,delay:-15});
-	TweenMax.to(elm, R(4,8), {x: x, rotationZ:R(0,180),repeat:-1,yoyo:true,ease:Sine.easeInOut});
-	TweenMax.to(elm, R(1,3), {rotationX:R(0,360),rotationY:R(0,360),repeat:-1,yoyo:true,ease:Sine.easeInOut,delay:-5});
-
-	// TweenMax.fromTo(elm,3 + (Math.random() * 5),{x: x, y: y},{y: endY, ease:Linear.easeNone});
-	// TweenMax.to(elm,1,{x: x, rotationZ:R(0,360),repeat:-1,yoyo:true,ease:Sine.easeInOut});
-	// TweenMax.to(elm,3,{x: x+((Math.random() * 150)-75), rotationX:R(270,360),rotationY:R(0,360),repeat:-1,yoyo:true,ease:Sine.easeInOut,delay:-5}); 
+	
+	$('foreignObject').append(Div);
+	TweenMax.fromTo(Div, 2,{x: x, y: y},{y: y + 200 , onComplete: onLeafEnd, onCompleteParams: [Div], ease:Linear.easeNone});
+	TweenMax.to(Div, R(4,8), {x: x, rotationZ:R(0, 30), repeat:-1, ease:Sine.easeIn});
+	TweenMax.to(Div, R(2,8), {x: x + ((Math.random() * 150)-75), rotationX:R(0, 360),  yoyo: true, rotationY:R(0, 360), repeat:-1,ease:Power1.easeIn}); 
+	TweenMax.to(settings, R(3, 10), {leafCount: 40, ease:Power1.easeIn});
 }
 
 function R(min,max) {return min+Math.random()*(max-min)};
+
+function onLeafEnd(flake) {
+
+	flake.remove();
+	flake = null;
+	Leaf.shift();
+	
+	if (Leaf.length < settings.leafCount) {
+		makeLeaf();
+	}
+}
+
+function tick()
+{
+	tickCount++;
+	var check = tickCount % settings.renewCheck;
+
+	if(check) {
+		if(Leaf.length < settings.leafCount) makeLeaf();
+	}	
+	requestAnimationFrame(tick);
+}
+
+requestAnimationFrame(tick);
