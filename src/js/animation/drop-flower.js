@@ -96,27 +96,25 @@ fetch('./src/asset/svg/autumn_trees.svg').then(data => data.text()).then((svg) =
 	makeLeaf();
 })
 function makeLeaf() {
-	let leftPath = $('#leaf #path10788').offset().left;
-	let rightPath = $('#leaf #path11106').offset().left;
+	let leftPath = 400;
+	let rightPath = 900;
 	let x = leftPath + (Math.random() * (rightPath - leftPath));
-	console.log(leftPath, rightPath, x);
-	let y = $('#leaf #path7918').offset().top;
-	let endY = $('#land').offset().top + (Math.random() * $('#land').height());
+	let y = 200 + Math.random()*50;
+	let endY = 400 + Math.random()*50;
 	
 	let Div = $('<div></div>');
 
-	TweenLite.set(Div,{attr: {class: "dot"}, rotationZ:R(40,360), x: x, y: y});
+	TweenLite.set(Div,{attr: {class: "dot", style: "background-color: rgba(246, 230, 56, 0.952); background-blend-mode:luminosity;"}, rotationZ: R(40,100), x: x, y: y});
 	Leaf.push(Div);
-
 	
 	$('foreignObject').append(Div);
-	TweenMax.fromTo(Div, 2,{x: x, y: y},{y: y + 200 , onComplete: onLeafEnd, onCompleteParams: [Div], ease:Linear.easeNone});
-	TweenMax.to(Div, R(4,8), {x: x, rotationZ:R(0, 30), repeat:-1, ease:Sine.easeIn});
+	TweenMax.fromTo(Div, R(3, 8),{x: x, y: y},{y: endY , onComplete: onLeafEnd, onCompleteParams: [Div], ease:Linear.easeNone});
+	TweenMax.to(Div, R(4,8), {x: x, rotationZ:R(0, 30), repeat:-1, yoyo: true, ease:Sine.easeIn});
 	TweenMax.to(Div, R(2,8), {x: x + ((Math.random() * 150)-75), rotationX:R(0, 360),  yoyo: true, rotationY:R(0, 360), repeat:-1,ease:Power1.easeIn}); 
-	TweenMax.to(settings, R(3, 10), {leafCount: 40, ease:Power1.easeIn});
+	TweenMax.to(settings, R(3, 10), {leafCount: 20, ease:Power1.easeIn});
 }
 
-function R(min,max) {return min+Math.random()*(max-min)};
+function R(min,max) {return min + (Math.random()*(max-min))};
 
 function onLeafEnd(flake) {
 

@@ -24,9 +24,9 @@ html {
 } */
 
 .dot{
-  width:40px;
-  height:40px;
+  width:15px;
+  height:22px;
   position:absolute;
-  background: url("../asset/img/leaf.png");
+  background-image: url("../asset/img/autumn/leaf.png");
   background-size: 100% 100%;
 }
