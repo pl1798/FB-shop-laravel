@@ -1,4 +1,4 @@
-/* :root {
+:root {
     --purple: #682ae9;
     --light: #dbdbdb;
     --header-link: #dbdbdb;
@@ -6,7 +6,7 @@
     --header-link-hover-icon: #dbdbdb;
     --header-link-active: #555;
     --std-color: #dbdbdb;
-    --bg: #0e1212;
+    --bg: #6fadc774;
     --bg-rgb: 14,18,18;
     --bgLight: radial-gradient(var(--bg),transparent,var(--purple) 130%);
     --gray: grey;
@@ -21,12 +21,12 @@ html {
     hyphens: auto;
     word-break: normal;
     color: #888;
-} */
+}
 
 .dot{
-  width:15px;
-  height:22px;
+  width:25px;
+  height:32px;
   position:absolute;
-  background-image: url("../asset/img/autumn/leaf.png");
+  background-image: url("../asset/img/autumn/leaf.svg");
   background-size: 100% 100%;
 }
