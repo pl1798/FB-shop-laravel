@@ -8,7 +8,10 @@ fetch('./src/asset/svg/autumn_trees.svg').then(data => data.text()).then((svg) =
 	$('#autumns_tree').append(svg);
 	makeLeaf();
 	Shake('g#leaf path');
-	onScrollCloud(".cloud");
+	onScrollCloud(".cloud1", "#autumns_tree", 1500, 800);
+	onScrollCloud(".cloud2", "#autumns_tree", 1500, 800);
+	onScrollCloud(".cloud3", "#autumns_tree", -1500, 800);
+	onScrollCloud(".cloud4", "#autumns_tree", -1500, 800);
 })
 function makeLeaf() {
 	let scale = 0.5 + (Math.random() * 0.5);
@@ -66,18 +69,22 @@ function Shake(elm) {
 
 //OnscrollCloud
 
-function onScrollCloud(elm) {
-	let speed = 100;
-	gsap.registerPlugin(ScrollTrigger, speed);
+function onScrollCloud(elm, trigger, x, y) {
+	gsap.registerPlugin(ScrollTrigger);
 
-	gsap.fromTo(".cloud", { opacity: 1 }, {
-        y: 300,
-        x: 1000,
+	gsap.fromTo(elm, { opacity: 1 }, {
+        y: y,
+        x: x,
         ease: "power2.out",
+		scrollSmoother: {
+			smooth: 2,
+			effects: true,
+			normalizeScroll: true
+		},
         scrollTrigger: {
-            trigger: "#autumns_tree",
-            start: "top bottom",
-			end:'bottom top-=200',
+            trigger: trigger,
+            start: "top-=200 top",
+			end:'bottom top',
             scrub: true
         }
     })
