@@ -4,7 +4,18 @@ var settings = {
 	renewCheck: 10
 };
 var tickCount = 0;
-fetch('./src/asset/svg/autumn_trees.svg').then(data => data.text()).then((svg) => {
+
+if (window.matchMedia("(max-width: 767px)").matches)  
+{ 
+	fetch('./src/asset/svg/autumn_trees_mobile.svg').then(data => data.text()).then((svg) => {
+		init(svg);
+	})
+} else { 
+	fetch('./src/asset/svg/autumn_trees.svg').then(data => data.text()).then((svg) => {
+		init(svg);
+	})
+}
+function init(svg) {
 	$('#autumns_tree').append(svg);
 	makeLeaf();
 	Shake('g#leaf path');
@@ -12,7 +23,7 @@ fetch('./src/asset/svg/autumn_trees.svg').then(data => data.text()).then((svg) =
 	onScrollCloud(".cloud2", "#autumns_tree", 1500, 800);
 	onScrollCloud(".cloud3", "#autumns_tree", -1500, 800);
 	onScrollCloud(".cloud4", "#autumns_tree", -1500, 800);
-})
+}
 function makeLeaf() {
 	let scale = 0.5 + (Math.random() * 0.5);
 	let leftPath = 400;
@@ -76,11 +87,6 @@ function onScrollCloud(elm, trigger, x, y) {
         y: y,
         x: x,
         ease: "power2.out",
-		scrollSmoother: {
-			smooth: 2,
-			effects: true,
-			normalizeScroll: true
-		},
         scrollTrigger: {
             trigger: trigger,
             start: "top-=200 top",
