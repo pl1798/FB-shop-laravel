@@ -26,11 +26,11 @@ function init(svg) {
 }
 function makeLeaf() {
 	let scale = 0.5 + (Math.random() * 0.5);
-	let leftPath = 400;
-	let rightPath = 900;
+	let leftPath = 100;
+	let rightPath = 300;
 	let x = leftPath + (Math.random() * (rightPath - leftPath));
-	let y = 200 + Math.random()*50;
-	let endY = 480 + Math.random() * 20;
+	let y = 100 + Math.random()*50;
+	let endY = 900 + Math.random() * 20;
 	
 	let Div = $('<div></div>');
 
@@ -38,10 +38,10 @@ function makeLeaf() {
 	Leaf.push(Div);
 	
 	$('foreignObject').append(Div);
-	TweenMax.fromTo(Div, R(3, 8),{x: x, y: y, scale: scale},{y: endY , onComplete: onLeafEnd, onCompleteParams: [Div], ease:Linear.easeNone});
-	TweenMax.to(Div, R(4,8), {x: x, rotationZ:R(0, 30), repeat:-1, yoyo: true, ease:Sine.easeIn});
-	TweenMax.to(Div, R(2,8), {x: x + ((Math.random() * 150)-75), rotationX:R(0, 360),  yoyo: true, rotationY:R(0, 360), repeat:-1,ease:Power1.easeIn}); 
-	TweenMax.to(settings, R(3, 10), {leafCount: 20, ease:Power1.easeIn});
+	// TweenMax.fromTo(Div, R(3, 8),{x: x, y: y, scale: scale},{y: endY , onComplete: onLeafEnd, onCompleteParams: [Div], ease:Linear.easeNone});
+	// TweenMax.to(Div, R(4,8), {x: x, rotationZ:R(0, 30), repeat:-1, yoyo: true, ease:Sine.easeIn});
+	// TweenMax.to(Div, R(2,8), {x: x + ((Math.random() * 150)-75), rotationX:R(0, 360),  yoyo: true, rotationY:R(0, 360), repeat:-1,ease:Power1.easeIn}); 
+	// TweenMax.to(settings, R(3, 10), {leafCount: 20, ease:Power1.easeIn});
 }
 
 function R(min,max) {return min + (Math.random()*(max-min))};
@@ -81,7 +81,7 @@ function Shake(elm) {
 //OnscrollCloud
 
 function onScrollCloud(elm, trigger, x, y) {
-	gsap.registerPlugin(ScrollTrigger);
+	gsap.registerPlugin(ScrollTrigger, 100);
 
 	gsap.fromTo(elm, { opacity: 1 }, {
         y: y,
