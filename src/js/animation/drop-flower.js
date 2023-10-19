@@ -26,11 +26,11 @@ function init(svg) {
 }
 function makeLeaf() {
 	let scale = 0.5 + (Math.random() * 0.5);
-	let leftPath = 100;
-	let rightPath = 300;
+	let leftPath = 400;
+	let rightPath = 900;
 	let x = leftPath + (Math.random() * (rightPath - leftPath));
-	let y = 100 + Math.random()*50;
-	let endY = 900 + Math.random() * 20;
+	let y = 200 + Math.random()*50;
+	let endY = 980 + Math.random() * 20;
 	
 	let Div = $('<div></div>');
 
